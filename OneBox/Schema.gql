@@ -1,0 +1,29 @@
+###############################################################
+# Simple Dgraph schema
+#
+# Copyright (C) Erik Mavrinac
+
+###############################################################
+# Common field definitions used in types below.
+
+person: uid .
+timestamp: dateTime .
+
+
+###############################################################
+
+# Models a person along with relationships.
+person.name: string @index(exact, term) .
+birthdate: dateTime .
+address: string .
+friend: [uid] @reverse .
+employee_of: [uid] @reverse .
+type Person {
+  person.name
+  birthdate
+  address
+
+  # Relationships with other People.
+  friend
+  employee_of
+}

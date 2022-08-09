@@ -1,0 +1,27 @@
+###############################################################
+# Test data
+#
+# Copyright (C) Erik Mavrinac
+
+{
+  set {
+    _:joe <person.name> "Joe Smith" .
+    _:joe <birthdate> "2001-12-03" .
+    _:joe <address> "123 Main St., Anywhere, ND 34131" .
+    _:joe <dgraph.type> "Person" .
+
+    _:bob <person.name> "Bob Jones" .
+    _:bob <birthdate> "1983-04-10" .
+    _:bob <dgraph.type> "Person" .
+
+    _:mary <person.name> "Mary Parsons" .
+    _:mary <birthdate> "1999-01-22" .
+    _:mary <dgraph.type> "Person" .
+
+    _:joe <friend> _:mary (start=2019-06-04) .
+
+    _:mary <employee_of> _:bob (start=2020-10-15) .
+
+    _:bob <employee_of> _:joe (start=2018-03-02) .
+  }
+}

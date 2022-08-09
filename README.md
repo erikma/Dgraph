@@ -1,2 +1,1 @@
-# Dgraph
-Utility code for using Dgraph
+Sample code for demoing Dgraph.

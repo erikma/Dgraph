@@ -1,0 +1,19 @@
+# Sample query to validate deployment.
+#
+# Copyright (C) Erik Mavrinac
+
+{
+  person(func: eq(person.name, "Bob Jones")) {
+    person.name
+    uid
+    birthdate
+    friend @facets {
+      person.name
+      uid
+    }
+    employee_of @facets {
+      person.name
+      uid
+    }
+  }
+}
